@@ -2,7 +2,7 @@ public class OrderService {
     INotifier emaINotifier;
     IDBrepository sqBrepository;
     ITax gsTax;
-    void OrderService(INotifier emaINotifier , IDBrepository sqBrepository , ITax gsTax) {
+    OrderService(INotifier emaINotifier , IDBrepository sqBrepository , ITax gsTax) {
         this.emaINotifier = emaINotifier;
         this.sqBrepository = sqBrepository;
         this.gsTax = gsTax;
@@ -11,5 +11,6 @@ public class OrderService {
     void checkout(String customerEmail , double subtotal){
             double totaltax = gsTax.totalWithTax(subtotal);
             emaINotifier.send(customerEmail , totaltax);
+            sqBrepository.save();
     }
 }

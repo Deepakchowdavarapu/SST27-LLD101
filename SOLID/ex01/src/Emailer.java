@@ -4,4 +4,4 @@ public class Emailer implements INotifier{
         System.out.println(to + " bill is " + amount);
     }
 }
-    0
+    

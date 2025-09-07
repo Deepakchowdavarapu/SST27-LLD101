@@ -1,7 +1,7 @@
 public class OrderController {
     void create(String id){
-        SqlOrderRepository repo = new SqlOrderRepository(); // hard dependency
-        repo.save(id);
-        System.out.println("Created order: " + id);
+        System.out.println("Creating order with id: " + id);
+        IDBRepository repository = new SqlOrderRepository();
+        repository.save(id);
     }
 }

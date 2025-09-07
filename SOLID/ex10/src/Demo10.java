@@ -1,5 +1,6 @@
 public class Demo10 {
     public static void main(String[] args) {
-        new ReportService().generate();
+        ILogger logger = new ConsoleLogger();
+        logger.log("Application started");
     }
 }
