@@ -14,8 +14,8 @@ public class CsvProfileImporter implements ProfileImporter {
     }
 
     @Override
-    public int importProfiles(String csvPath) {
-        List<String[]> rows = csvReader.read(csvPath);
+    public int importFrom(java.nio.file.Path csvFile) {
+        List<String[]> rows = csvReader.read(csvFile.toString());
         int count = 0;
         for (int i = 1; i < rows.size(); i++) { // skip header
             String[] row = rows.get(i);
