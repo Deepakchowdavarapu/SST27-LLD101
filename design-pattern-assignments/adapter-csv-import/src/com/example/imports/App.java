@@ -1,0 +1,13 @@
+package com.example.imports;
+
+import java.nio.file.Path;
+
+public class App {
+    public static void main(String[] args) {
+        if (args.length == 0) throw new IllegalArgumentException("path required");
+        String csvPath = args[0];
+        ProfileImporter importer = new CsvProfileImporter(new NaiveCsvReader(), new ProfileService());
+        int n = importer.importProfiles(csvPath);
+        System.out.println("Imported " + n + " profiles");
+    }
+}
