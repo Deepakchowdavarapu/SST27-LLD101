@@ -1,6 +1,6 @@
-package beverages_decorator;
+// package beverages_decorator;
 
-public class Cappuccino extends Beverage{
+public class Cappuccino implements Coffee{
 
 	@Override
 	public int cost() {
